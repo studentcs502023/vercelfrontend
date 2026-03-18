@@ -4,13 +4,13 @@ import axios from "axios";
 import { useAuthStore } from "../store/auth.js";
 
 
+
 const axiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_base_URL,
+  baseURL: "https://backend-project-numerolog-a.onrender.com/api", // ✅ solo la parte común
   headers: {
     "Content-Type": "application/json",
   },
 });
-
 // Interceptor para añadir el header x-token en cada petición
 axiosInstance.interceptors.request.use(
   (config) => {
